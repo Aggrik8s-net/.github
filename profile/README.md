@@ -1,5 +1,7 @@
 # .github
-Aggrik8s.net is a project to develop an MVC to develop Edge based Kubernetes applications. Edge based Kubernetes adds some complexity compared to cloud based offerings where the vendor provides most of the required platform engineering and operations tasks.  Edge based platform services can be provided in a Hybrid model using both a combination of onsite BareMetal and Cloud based services. We will rely on the declarative provisioning model to reduce the complexity of maintaining our MVC.
+Aggrik8s.net is a project to develop an Edge based Kubernetes platform to host IoT applications. Edge based Kubernetes strategies trade off infrastructure complexity against scalability and administrative repeatability.  With cloud based offerings, the vendor provides most of the platform engineering and operations tasks such as periodic component upgrades.  Edge based applications can be composed in a Hybrid model using a mix of onsite BareMetal and Cloud based services. 
+
+We will rely on the declarative provisioning model to reduce the complexity of maintaining our IoT platform. Infrastructure provisioning will be done using Terraform and some shell and Ansible. Day-2 provisioning will typically use Ansible or Helm. 
 
 After reviewing several alternatives, the current focus is to build BareMetal Kubernetes clusters using:
 - [rancherfederal/rke2-ansible](https://github.com/rancherfederal/rke2-ansible) on Raspberry Pi 5 SoC (ARM64),
