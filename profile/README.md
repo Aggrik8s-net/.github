@@ -7,6 +7,7 @@ After reviewing several alternatives, the current focus is to build BareMetal Ku
 - [rancherfederal/rke2-ansible](https://github.com/rancherfederal/rke2-ansible) on Raspberry Pi 5 SoC (ARM64),
 - [siderolabs/talos](https://github.com/siderolabs/talos) on Proxmox (X864) based VMs,
 - **TBD** an Apple Silicon based Automation toolchain to deploy both of the above on a MacBook.
+
 Theese tools allow deployment of Kubernetes clusters to support research into security, scalability, and repeatability. 
 
 Examples of businesses that have successfully monetized a Kubernetes based Edge strategy include:
