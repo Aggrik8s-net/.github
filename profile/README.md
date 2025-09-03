@@ -1,5 +1,5 @@
 # .github
-Aggrik8s.net is a project to develop an Edge based Kubernetes platform to host IoT applications. Edge based Kubernetes strategies trade off infrastructure complexity against scalability and administrative repeatability.  With cloud based offerings, the vendor provides most of the platform engineering and operations tasks such as periodic component upgrades.  Edge based applications can be composed in a Hybrid model using a mix of onsite BareMetal and Cloud based services. 
+Aggrik8s.net is a project to develop an Edge based Kubernetes platform to host IoT applications. Edge based Kubernetes strategies trade off infrastructure complexity against scalability and repeatability.  With cloud based offerings, the vendor provides most of the platform engineering and operations tasks such as periodic component upgrades.  Edge based applications can be composed in a Hybrid model using a mix of onsite BareMetal and Cloud based services. 
 
 We will rely on the declarative provisioning model to reduce the complexity of maintaining our IoT platform. Infrastructure provisioning will be done using Terraform and some shell and Ansible. Day-2 provisioning will typically use Ansible or Helm. 
 
