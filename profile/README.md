@@ -1,5 +1,5 @@
 # Aggrik8s-net
-Aggrik8s-net hosts an Edge based Kubernetes IoT platform. The various repositories in this organization allow the deployment of Kubernetes clusters to host applications and support research into platform observability, security, scalability, and repeatability. 
+Aggrik8s-net hosts an Edge based Kubernetes IoT platform. The various repositories in this organization allow the deployment of meshed Kubernetes clusters to host applications and support research into platform observability, security, scalability, and repeatability. 
 
 Edge based Kubernetes strategies trade off infrastructure complexity against scalability and repeatability.  Cloud based offerings shift some of the platform engineering and operations tasks back to the vendor.  Edge based applications can be composed in a Hybrid model using a mix of onsite BareMetal and Cloud based services.  Automating the platform administration allows us to focus on the application layer "sizzle".
 
