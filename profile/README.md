@@ -1,5 +1,5 @@
 # .github
-Aggrik8s.net is a project to develop an Edge based Kubernetes platform to host IoT applications. Edge based Kubernetes strategies trade off infrastructure complexity against scalability and repeatability.  With cloud based offerings, the vendor provides most of the platform engineering and operations tasks such as periodic component upgrades.  Edge based applications can be composed in a Hybrid model using a mix of onsite BareMetal and Cloud based services. 
+Aggrik8s.net is a project to develop an Edge based Kubernetes platform to host IoT applications. Edge based Kubernetes strategies trade off infrastructure complexity against scalability and repeatability.  With cloud based offerings, the vendor provides most of the platform engineering and operations tasks such as periodic component upgrades.  Edge based applications can be composed in a Hybrid model using a mix of onsite BareMetal and Cloud based services. The various repositories in this organization allow the deployment of IoT Kubernetes clusters to support research into security, scalability, and repeatability. By automating the platform administration we can focus on the applicvation layer "sizzle".
 
 We will rely on the declarative provisioning model to reduce the complexity of maintaining our IoT platform. Infrastructure provisioning will be done using Terraform and some shell and Ansible. Day-2 provisioning will typically use Ansible or Helm. 
 
@@ -8,7 +8,7 @@ After reviewing several alternatives, the current focus is to build BareMetal Ku
 - [siderolabs/talos](https://github.com/siderolabs/talos) on Proxmox (X864) based VMs,
 - **TBD** an Apple Silicon based Automation toolchain to deploy both of the above on a MacBook.
 
-The various repositories in this organization allow the deployment of IoT Kubernetes clusters to support research into security, scalability, and repeatability. By automating the platform administration we can focus on the applicvation layer "sizzle".
+
 
 Examples of businesses that have successfully monetized a Kubernetes based Edge strategy include:
 - [Chick-fil-A - Enterprise Restaurant Compute](https://medium.com/chick-fil-atech/enterprise-restaurant-compute-f5e2fd63d20f),
