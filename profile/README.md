@@ -13,6 +13,7 @@ Using these repos we provision a Mikrotik & Proxmox based fabric which uses OSPF
 For development purposes we use Proxmox to spin up the following clusters:
   - `talos-east` on VLAN1500 which uses `192.168.15.0/24`,
   - `talos-west` on VLAN2000 which uses `192.168.20.0/24`.
+
 Talos is our current development platform to deliver immutable clusters for the IoT Edge.
 ### Rancher Government RKE2
 We also have a [Rancher Government RKE2](https://ranchergovernment.com/rke2) cluster running on Raspberry Pi 5 nodes.
