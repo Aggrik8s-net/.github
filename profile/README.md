@@ -40,8 +40,9 @@ We also have a [Rancher Government RKE2](https://ranchergovernment.com/rke2) clu
 `piCluster` is our original Raspberry Pi 5 based cluster which will eventually be added as the third cluster in our mesh.
 
 We use [rancherfederal/rke2-ansible](https://github.com/rancherfederal/rke2-ansible) to provision the Pi5 nodes.
-Several Ansible Playbooks developed on this platform have been verified to work on our Talos clusters.
-Several of these playbooks will be added to this organization in the near future (after tidying up).
 
-At this time, Talos does not run on Raspberry Pi 5 (only 4) and having a hybrid mesh seems like a noble goal (given time).
+At this time, Talos does not run on Raspberry Pi 5 and having a hybrid mesh seems like a noble goal.
+### Ansible Playbooks
+Several Ansible Playbooks initially developed on `piNet` have been verified to work on our Talos mesh.
+We will (eventually) publish a `Aggrik8s-net Day-2 repo` with a collection of Ansible Pplaybooks for replaybooks will be added to this organization in the near future (after tidying up).
 
