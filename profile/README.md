@@ -22,9 +22,9 @@ This dramatically simplifies operations workflows such as HA Failover and Canary
 ## Cluster Details
 Our Kubernetes clusters use [Aggrik8s-net/aggrik8s-fabric](https://github.com/Aggrik8s-net/aggrik8s-fabric) to provision required network resources.
 
-We have two code bases with all development currently focused on the Talos stack.
-1. a Raspberry Pi 5 cluster provisioned using [rancherfederal/rke2-ansible](https://github.com/rancherfederal/rke2-ansible),
-2. the Proxmox based Talos clusters provisioned using [Aggrik8s-net/aggrik8s-cluster](https://github.com/Aggrik8s-net/aggrik8s-cluster).
+We have two code bases with all development currently focused on the second option, the Talos stack.
+1. a [rancherfederal/rke2-ansible](https://github.com/rancherfederal/rke2-ansible) cluster running on 5 [Raspberry Pi 5](https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-product-brief.pdf) nodes mounted in an [UCTRONICS 1U rack mount](https://www.amazon.com/UCTRONICS-Raspberry-Server-Adapters-Support/dp/B0DY7HKRJZ/ref=ast_sto_dp_puis),
+2. an [Aggrik8s-net/aggrik8s-cluster](https://github.com/Aggrik8s-net/aggrik8s-cluster) cluster mesh running on Proxmox.
 
 Only the Talos implementation is currently published in this GitHub organization.
 ### Talos
