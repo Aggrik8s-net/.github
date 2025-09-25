@@ -8,14 +8,14 @@ The key repositories and their purpose:
   - [Deploying Cilium on Talos](https://www.talos.dev/v1.11/kubernetes-guides/network/deploying-cilium/) using both Terraform and BASH scripts,
   - [Ceph with Rook on Talos](https://www.talos.dev/v1.11/kubernetes-guides/configuration/ceph-with-rook/) using Terraform and HELM.
 ## Architecture
-[Topology Aware Routing and Service Mesh across Clusters with Cluster Mesh](https://isovalent.com/blog/post/t://isovalent.com/blog/post/topology-aware-routing-and-service-mesh-across-clusters-with-cluster-mesh/) provides a reference view of a Talos Mesh which we show below.
+[Canary Example 1: 25% / 75% Traffic Split Across Clusters with Failover](https://isovalent.com/blog/post/topology-aware-routing-and-service-mesh-across-clusters-with-cluster-mesh/#canary-example-1-25-75-traffic-split-across-clusters-with-failover) provides an examples of policy based multi cluster access as shown below.
 The mesh allows both `Frontend` and `Backend` applications to have policy based access across clusters. 
 This dramatically simplifies operations workflows such as HA Failover and Canary Deployments. 
 <p align="center">
-  <img src="https://cdn.sanity.io/images/xinsvxfu/production/d167e95632e405b09a6711e7d310067d9786db9a-1200x630.png?auto=format&q=80&fit=clip&w=1080" title="Aggrik8s Cluster Mesh - Cross Cluster Deployments" style="style=width:100%;height:100%;">
+  <img src="https://cdn.sanity.io/images/xinsvxfu/production/c3c3ffc5e3706a0f9b8bb99a6f1387838f2d7211-1600x780.png?auto=format&q=80&fit=clip&w=2560" title="Aggrik8s Cluster Mesh - Cross Cluster Deployments" style="style=width:100%;height:100%;">
 </p>
 
-[Canary Example 1: 25% / 75% Traffic Split Across Clusters with Failover](https://isovalent.com/blog/post/topology-aware-routing-and-service-mesh-across-clusters-with-cluster-mesh/#canary-example-1-25-75-traffic-split-across-clusters-with-failover) describes the type of policy based traffic routing we can do across our mesh.
+ describes the type of policy based traffic routing we can do across our mesh.
 ## Cluster Details
 We have two code bases.
 - a Legacy Raspberry Pi 5 and Latte Panda Mu based RAW METAL cluster,
@@ -41,3 +41,4 @@ Several Ansible Playbooks developed on this platform have been verified to work 
 Several of these playbooks will be added to this organization in the near future (after tidying up).
 
 At this time, Talos does not run on Raspberry Pi 5 (only 4) and having a hybrid mesh seems like a noble goal (given time).
+
