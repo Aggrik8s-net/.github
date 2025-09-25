@@ -20,26 +20,33 @@ This dramatically simplifies operations workflows such as HA Failover and Canary
 </p>
 
 ## Cluster Details
-All of our Kubernetes clusters use [Aggrik8s-net/aggrik8s-fabric](https://github.com/Aggrik8s-net/aggrik8s-fabric) to provision all of our network resources.
+Our Kubernetes clusters use [Aggrik8s-net/aggrik8s-fabric](https://github.com/Aggrik8s-net/aggrik8s-fabric) to provision required network resources.
 
-We have two code bases with current development focused on Talos.
-1. a Legacy Raspberry Pi 5 and Latte Panda Mu based RAW METAL cluster,
+We have two code bases with all development currently focused on the Talos stack.
+1. a Raspberry Pi 5 cluster provisioned using [rancherfederal/rke2-ansible](https://github.com/rancherfederal/rke2-ansible),
 2. the Proxmox based Talos clusters provisioned using [Aggrik8s-net/aggrik8s-cluster](https://github.com/Aggrik8s-net/aggrik8s-cluster).
 
-Only our Talos implementation is currently published in this organization.
+Only the Talos implementation is currently published in this GitHub organization.
 ### Talos
-For development purposes, we are using Proxmox to spin up the following clusters:
+Talos is our current development platform to deliver immutable clusters for the IoT Edge.
+
+For development purposes, we use Proxmox to spin up two clusters, each having:
+- 3 `Control Plane` nodes,
+- 3 `Worker` nodes.
+
+The cluster's details are:
 - `talos-east` on VLAN1500 which uses `192.168.15.0/24`,
 - `talos-west` on VLAN2000 which uses `192.168.20.0/24`.
 
-Talos is our current development platform to deliver immutable clusters for the IoT Edge.
+
 ### Rancher Government RKE2
-We also have a [Rancher Government RKE2](https://ranchergovernment.com/rke2) cluster running on Raspberry Pi 5 nodes mounted in a 6U travel rack.
+[RKE2](https://ranchergovernment.com/rke2) is our choice for a Kubernetes distribution to deploy on Linux nodes.
+Our cluster runs on Raspberry Pi 5 SoC nodes mounted in a 6U travel rack along with the Mikrotik routers and switches.
+
+The cluster details are: 
 - `piCluster` on VLAN10 which uses `192.168.10.0/24`.
 
-`piCluster` is our original Raspberry Pi 5 based cluster which will eventually be added as the third cluster in our mesh.
-
-We use [rancherfederal/rke2-ansible](https://github.com/rancherfederal/rke2-ansible) to provision the Pi5 nodes.
+`piCluster` is our original development cluster which will eventually be the third cluster in our mesh.
 
 At this time, Talos does not run on Raspberry Pi 5 and having a hybrid mesh seems like a noble goal.
 ### Ansible Playbooks
