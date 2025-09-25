@@ -33,4 +33,5 @@ This dramatically simplifies operations workflows such as HA Failover and Canary
 <p align="center">
   <img src="https://cdn.sanity.io/images/xinsvxfu/production/d167e95632e405b09a6711e7d310067d9786db9a-1200x630.png?auto=format&q=80&fit=clip&w=1080" title="Aggrik8s Cluster Mesh - Cross Cluster Deployments" style="style=width:100%;height:100%;">
 </p>
-Several examples of Multi-Cluster Routing such as [Canary Load Balancing (25% / 75%)](https://isovalent.com/blog/post/topology-aware-routing-and-service-mesh-across-clusters-with-cluster-mesh/#canary-example-1-25-75-traffic-split-across-clusters-with-failover) are described in detail.
+
+[Canary Example 1: 25% / 75% Traffic Split Across Clusters with Failover](https://isovalent.com/blog/post/topology-aware-routing-and-service-mesh-across-clusters-with-cluster-mesh/#canary-example-1-25-75-traffic-split-across-clusters-with-failover) describes the type of policy based traffic routing we can do across our mesh.
