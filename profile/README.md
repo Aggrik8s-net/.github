@@ -1,30 +1,33 @@
 # Welcome to Aggrik8s-net
 ## Organization Purpose
-Host several repositories which collectively provision a mesh of [Talos clusters](https://www.talos.dev/) ready to support application development.
+Host repositories to provision a mesh of [Talos clusters](https://www.talos.dev/) ready to use for application development.
 ## Repositories
 The key repositories and their purpose:
-- [Aggrik8s-net/aggrik8s-fabric](https://github.com/Aggrik8s-net/aggrik8s-fabric) provision VLAN based resources to support our cluster mesh,
-- [Aggrik8s-net/aggrik8s-cluster](https://github.com/Aggrik8s-net/aggrik8s-cluster) spins up two clusters with automation for these tasks:
-  - [Deploying Cilium on Talos](https://www.talos.dev/v1.11/kubernetes-guides/network/deploying-cilium/) using both Terraform and BASH scripts,
-  - [Ceph with Rook on Talos](https://www.talos.dev/v1.11/kubernetes-guides/configuration/ceph-with-rook/) using Terraform and HELM.
+1. [Aggrik8s-net/aggrik8s-fabric](https://github.com/Aggrik8s-net/aggrik8s-fabric) provision network resources to host our mesh,
+2. [Aggrik8s-net/aggrik8s-cluster](https://github.com/Aggrik8s-net/aggrik8s-cluster) spin up two clusters with task automation for:
+   - [Deploying Cilium on Talos](https://www.talos.dev/v1.11/kubernetes-guides/network/deploying-cilium/) using Terraform and BASH,
+   - [Ceph with Rook on Talos](https://www.talos.dev/v1.11/kubernetes-guides/configuration/ceph-with-rook/) using Terraform and HELM.
+
+We can reliably create and destroy Talos clusters but care needs to be taken with our network fabric.
 ## Architecture
-[Canary Example 1: 25% / 75% Traffic Split Across Clusters with Failover](https://isovalent.com/blog/post/topology-aware-routing-and-service-mesh-across-clusters-with-cluster-mesh/#canary-example-1-25-75-traffic-split-across-clusters-with-failover) provides an examples of policy based multi cluster access as shown below.
-The mesh allows both `Frontend` and `Backend` applications to have policy based access across clusters. 
+[Canary Example 1: 25% / 75% Traffic Split Across Clusters with Failover](https://isovalent.com/blog/post/topology-aware-routing-and-service-mesh-across-clusters-with-cluster-mesh/#canary-example-1-25-75-traffic-split-across-clusters-with-failover) describes a multi-cluster application rollout as shown below.
+
+Cilium cluster mesh allows declarative policy to be deployed on `Frontend` and `Backend` applications for all meshed clusters.
+
 This dramatically simplifies operations workflows such as HA Failover and Canary Deployments. 
 <p align="center">
   <img src="https://cdn.sanity.io/images/xinsvxfu/production/c3c3ffc5e3706a0f9b8bb99a6f1387838f2d7211-1600x780.png?auto=format&q=80&fit=clip&w=2560" title="Aggrik8s Cluster Mesh - Cross Cluster Deployments" style="style=width:100%;height:100%;">
 </p>
 
- describes the type of policy based traffic routing we can do across our mesh.
 ## Cluster Details
-We have two code bases.
-- a Legacy Raspberry Pi 5 and Latte Panda Mu based RAW METAL cluster,
-- Current Proxmox based Talos clusters.
+All of our Kubernetes clusters use [Aggrik8s-net/aggrik8s-fabric](https://github.com/Aggrik8s-net/aggrik8s-fabric) to provision all of our network resources.
 
-Only one IaaS code base, our Talos implementation, is currently published in this organization.
+We have two code bases with current development focused on Talos.
+1. a Legacy Raspberry Pi 5 and Latte Panda Mu based RAW METAL cluster,
+2. the Proxmox based Talos clusters provisioned using [Aggrik8s-net/aggrik8s-cluster](https://github.com/Aggrik8s-net/aggrik8s-cluster).
+
+Only our Talos implementation is currently published in this organization.
 ### Talos
-We use these repos to provision our Mikrotik & Proxmox based network fabric.
-
 For development purposes, we are using Proxmox to spin up the following clusters:
 - `talos-east` on VLAN1500 which uses `192.168.15.0/24`,
 - `talos-west` on VLAN2000 which uses `192.168.20.0/24`.
