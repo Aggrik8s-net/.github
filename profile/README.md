@@ -7,25 +7,6 @@ The key repositories and their purpose:
 - [Aggrik8s-net/aggrik8s-cluster](https://github.com/Aggrik8s-net/aggrik8s-cluster) spins up two clusters with automation for these tasks:
   - [Deploying Cilium on Talos](https://www.talos.dev/v1.11/kubernetes-guides/network/deploying-cilium/) using both Terraform and BASH scripts,
   - [Ceph with Rook on Talos](https://www.talos.dev/v1.11/kubernetes-guides/configuration/ceph-with-rook/) using Terraform and HELM.
-### Talos
-We use these repos to provision our Mikrotik & Proxmox based network fabric. 
-
-For development purposes, we are using Proxmox to spin up the following clusters:
-  - `talos-east` on VLAN1500 which uses `192.168.15.0/24`,
-  - `talos-west` on VLAN2000 which uses `192.168.20.0/24`.
-
-Talos is our current development platform to deliver immutable clusters for the IoT Edge.
-### Rancher Government RKE2
-We also have a [Rancher Government RKE2](https://ranchergovernment.com/rke2) cluster running on Raspberry Pi 5 nodes mounted in a 6U travel rack.
-  - `piCluster` on VLAN10 which uses `192.168.10.0/24`.
-
-`piCluster` is our original Raspberry Pi 5 based cluster which will eventually be added as the third cluster in our mesh.
-
-We use [rancherfederal/rke2-ansible](https://github.com/rancherfederal/rke2-ansible) to provision the Pi5 nodes.
-Several Ansible Playbooks developed on this platform have been verified to work on our Talos clusters. 
-Several of these playbooks will be added to this organization in the near future (after tidying up).
-
-At this time, Talos does not run on Raspberry Pi 5 (only 4) and having a hybrid mesh seems like a noble goal (given time).
 ## Architecture
 [Topology Aware Routing and Service Mesh across Clusters with Cluster Mesh](https://isovalent.com/blog/post/t://isovalent.com/blog/post/topology-aware-routing-and-service-mesh-across-clusters-with-cluster-mesh/) provides a reference view of a Talos Mesh which we show below.
 The mesh allows both `Frontend` and `Backend` applications to have policy based access across clusters. 
@@ -35,3 +16,28 @@ This dramatically simplifies operations workflows such as HA Failover and Canary
 </p>
 
 [Canary Example 1: 25% / 75% Traffic Split Across Clusters with Failover](https://isovalent.com/blog/post/topology-aware-routing-and-service-mesh-across-clusters-with-cluster-mesh/#canary-example-1-25-75-traffic-split-across-clusters-with-failover) describes the type of policy based traffic routing we can do across our mesh.
+## Cluster Details
+We have two code bases.
+- a Legacy Raspberry Pi 5 and Latte Panda Mu based RAW METAL cluster,
+- Current Proxmox based Talos clusters.
+
+Only one IaaS code base, our Talos implementation, is currently published in this organization.
+### Talos
+We use these repos to provision our Mikrotik & Proxmox based network fabric.
+
+For development purposes, we are using Proxmox to spin up the following clusters:
+- `talos-east` on VLAN1500 which uses `192.168.15.0/24`,
+- `talos-west` on VLAN2000 which uses `192.168.20.0/24`.
+
+Talos is our current development platform to deliver immutable clusters for the IoT Edge.
+### Rancher Government RKE2
+We also have a [Rancher Government RKE2](https://ranchergovernment.com/rke2) cluster running on Raspberry Pi 5 nodes mounted in a 6U travel rack.
+- `piCluster` on VLAN10 which uses `192.168.10.0/24`.
+
+`piCluster` is our original Raspberry Pi 5 based cluster which will eventually be added as the third cluster in our mesh.
+
+We use [rancherfederal/rke2-ansible](https://github.com/rancherfederal/rke2-ansible) to provision the Pi5 nodes.
+Several Ansible Playbooks developed on this platform have been verified to work on our Talos clusters.
+Several of these playbooks will be added to this organization in the near future (after tidying up).
+
+At this time, Talos does not run on Raspberry Pi 5 (only 4) and having a hybrid mesh seems like a noble goal (given time).
